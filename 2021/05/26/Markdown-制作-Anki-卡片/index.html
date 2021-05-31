@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Markdown 制作 Anki 卡片 | RON BLOG</title>
+  <meta name="description" content="同好会arkDown 编辑器 方式一：MarkDown 编辑器资料准备这里以Typora为例：1.打开MarkDown 编辑器2.设置标题层级3.四级标题#### 这层标题为面试的具体问题，如“JRE和JDK的区别？”4.五级标题##### 这层标题为面试问题的具体答案,示例如下：123456789101112131415# JAVA工程师面试## 1.JAVA ### (1)Java基础####">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 制作 Anki 卡片">
+<meta property="og:url" content="https://gitflhub.github.io/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/index.html">
+<meta property="og:site_name" content="RON BLOG">
+<meta property="og:description" content="同好会arkDown 编辑器 方式一：MarkDown 编辑器资料准备这里以Typora为例：1.打开MarkDown 编辑器2.设置标题层级3.四级标题#### 这层标题为面试的具体问题，如“JRE和JDK的区别？”4.五级标题##### 这层标题为面试问题的具体答案,示例如下：123456789101112131415# JAVA工程师面试## 1.JAVA ### (1)Java基础####">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-26T14:44:46.268Z">
+<meta property="article:modified_time" content="2021-05-26T16:01:04.531Z">
+<meta property="article:author" content="Ron">
+<meta property="article:tag" content="Anki">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://gitflhub.github.io/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="RON BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/GitFLHub" target="_blank">
+          <img class="img-circle img-rotate" src="/images/Ron.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Ron</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">AI enthusiasts</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/GitFLHub" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/">资料整理</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anki/" rel="tag">Anki</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bean/" rel="tag">Bean</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-%E6%B3%A8%E8%A7%A3/" rel="tag">Java 注解</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octave/" rel="tag">Octave</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" rel="tag">数学公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%81/" rel="tag">锁</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AOP/" style="font-size: 13px;">AOP</a> <a href="/tags/Anki/" style="font-size: 13px;">Anki</a> <a href="/tags/Bean/" style="font-size: 14px;">Bean</a> <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/Java-%E6%B3%A8%E8%A7%A3/" style="font-size: 13px;">Java 注解</a> <a href="/tags/LaTex/" style="font-size: 13px;">LaTex</a> <a href="/tags/Machine-Learning/" style="font-size: 13px;">Machine Learning</a> <a href="/tags/Octave/" style="font-size: 14px;">Octave</a> <a href="/tags/Spring/" style="font-size: 13px;">Spring</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">排序</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" style="font-size: 13px;">数学公式</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="/tags/%E9%94%81/" style="font-size: 13px;">锁</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9AMarkDown-%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">方式一：MarkDown 编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%96%99%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">资料准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">格式转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%BD%AC%E4%B8%BAAnki%E6%89%B9%E9%87%8F%E6%A0%BC%E5%BC%8FCSV"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.转为Anki批量格式CSV</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%A0%BC%E5%BC%8F%E8%B0%83%E6%95%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.格式调整</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%AF%BC%E5%85%A5Anki"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.导入Anki</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E7%BD%91%E9%A1%B5%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="toc-number">2.</span> <span class="toc-text">方式二：网页数据爬取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.</span> <span class="toc-text">网页爬取数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-number">2.1.1.</span> <span class="toc-text">爬取工具类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#maven-%E4%BE%9D%E8%B5%96"><span class="toc-number">2.1.2.</span> <span class="toc-text">maven 依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.3.</span> <span class="toc-text">主方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%89%93%E5%8D%B0%E7%BB%93%E6%9E%9C%EF%BC%88%E9%83%A8%E5%88%86%EF%BC%89"><span class="toc-number">2.1.4.</span> <span class="toc-text">控制台打印结果（部分）</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Markdown-制作-Anki-卡片" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Markdown 制作 Anki 卡片
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/" class="article-date">
+	  <time datetime="2021-05-26T14:44:46.268Z" itemprop="datePublished">2021-05-26</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/">资料整理</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Anki/" rel="tag">Anki</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 5.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 25(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>同好会arkDown 编辑器</p>
+<h3 id="方式一：MarkDown-编辑器"><a href="#方式一：MarkDown-编辑器" class="headerlink" title="方式一：MarkDown 编辑器"></a>方式一：MarkDown 编辑器</h3><h4 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h4><p>这里以Typora为例：<br>1.打开MarkDown 编辑器<br>2.设置标题层级<br>3.四级标题#### 这层标题为面试的具体问题，如“JRE和JDK的区别？”<br>4.五级标题##### 这层标题为面试问题的具体答案,示例如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># JAVA工程师面试</span><br><span class="line"></span><br><span class="line">## 1.JAVA </span><br><span class="line"></span><br><span class="line">### (1)Java基础</span><br><span class="line"></span><br><span class="line">#### JRE和JDK的区别</span><br><span class="line"></span><br><span class="line">##### JDK Java Development Kit,Java 开发工具包，提供了开发环境和运行环境</span><br><span class="line"></span><br><span class="line">##### JRE Java Runtime Environment Java 运行环境，为Java提供了所需的环境</span><br><span class="line"></span><br><span class="line">##### 运行Java程序，JRE即可</span><br><span class="line"></span><br><span class="line">##### 编写Java程序，需要安装JDK</span><br></pre></td></tr></table></figure></p>
+<h4 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h4><h5 id="1-转为Anki批量格式CSV"><a href="#1-转为Anki批量格式CSV" class="headerlink" title="1.转为Anki批量格式CSV"></a>1.转为Anki批量格式CSV</h5><p>网上有一个大佬做了Markdown转Anki卡片的功能，链接如下<br><a target="_blank" rel="noopener" href="https://hintsnet.com/tools/md2anki/index.html">https://hintsnet.com/tools/md2anki/index.html</a></p>
+<h5 id="2-格式调整"><a href="#2-格式调整" class="headerlink" title="2.格式调整"></a>2.格式调整</h5><p>由于下载来的文件里面默认HTML标签是&lt; ol &gt;,在文本编辑器中批量替换为&lt; ul &gt;</p>
+<h5 id="3-导入Anki"><a href="#3-导入Anki" class="headerlink" title="3.导入Anki"></a>3.导入Anki</h5><h3 id="方式二：网页数据爬取"><a href="#方式二：网页数据爬取" class="headerlink" title="方式二：网页数据爬取"></a>方式二：网页数据爬取</h3><h4 id="网页爬取数据"><a href="#网页爬取数据" class="headerlink" title="网页爬取数据"></a>网页爬取数据</h4><h5 id="爬取工具类"><a href="#爬取工具类" class="headerlink" title="爬取工具类"></a>爬取工具类</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.jsoup.Jsoup;</span><br><span class="line"><span class="keyword">import</span> org.jsoup.nodes.Document;</span><br><span class="line"><span class="keyword">import</span> org.jsoup.nodes.Element;</span><br><span class="line"><span class="keyword">import</span> org.jsoup.select.Elements;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 网页抓取工具类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法入口</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> htmltest 要获取的资源URL</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> laber    anki标签</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">demo1</span><span class="params">(String htmltest, String laber)</span> </span>&#123;</span><br><span class="line">        String html = htmltest;</span><br><span class="line">        <span class="comment">// HTML文档对象</span></span><br><span class="line">        Document doc = Jsoup.parse(html);</span><br><span class="line">        Elements rows = doc.select(<span class="string">&quot;div[class=interview_detail]&quot;</span>).get(<span class="number">0</span>).select(<span class="string">&quot;ul&quot;</span>).select(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">        Elements rowTitle = doc.select(<span class="string">&quot;div[class=interview_detail]&quot;</span>);</span><br><span class="line">        <span class="comment">// 生成Anki题目</span></span><br><span class="line">        Element pFirst = rowTitle.select(<span class="string">&quot;p&quot;</span>).first();</span><br><span class="line">        <span class="comment">// rowTitle.remove(pFirst);</span></span><br><span class="line"></span><br><span class="line">        StringBuffer stringBuffer = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        String res = rowTitle.html();</span><br><span class="line">        <span class="keyword">if</span> (rows.size() == <span class="number">0</span>) &#123;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 获取网页结构指定的div[class=interview_wrap] 的代码信息</span></span><br><span class="line">            String title = doc.select(<span class="string">&quot;div[class=interview_wrap]&quot;</span>).select(<span class="string">&quot;h2&quot;</span>).get(<span class="number">0</span>).text();</span><br><span class="line">            <span class="comment">// 替换回车</span></span><br><span class="line">            res = res.replaceAll(<span class="string">&quot;(\\r\\n|\\n|\\n\\r)&quot;</span>, <span class="string">&quot; &quot;</span>)</span><br><span class="line">                    .replaceAll(<span class="string">&quot;\t&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">                    .replaceAll(<span class="string">&quot;class=\&quot;language-java\&quot;&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (pFirst != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 删除空行</span></span><br><span class="line">                res = res.replaceAll(pFirst.html(), <span class="string">&quot;&quot;</span>).replaceAll(<span class="string">&quot;&lt;p&gt;&lt;/p&gt;&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// title 是anki卡片正面</span></span><br><span class="line">            stringBuffer.append(title).append(<span class="string">&quot;\t &quot;</span>);</span><br><span class="line">            <span class="comment">// 标签分类</span></span><br><span class="line">            stringBuffer.append(laber).append(<span class="string">&quot;\t &quot;</span>);</span><br><span class="line">            <span class="comment">// res 是anki卡片反面</span></span><br><span class="line">            stringBuffer.append(res);</span><br><span class="line">            System.out.println(stringBuffer.toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="maven-依赖"><a href="#maven-依赖" class="headerlink" title="maven 依赖"></a>maven 依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.jsoup<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jsoup<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.13.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.URL;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Script</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 这个文件里面存放了链接信息</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">&quot;src/main/resources/url.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 读取配置信息</span></span><br><span class="line">            BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));</span><br><span class="line">            String str;</span><br><span class="line">            String label = <span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">while</span> ((str = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="comment">// 获取Anki标签</span></span><br><span class="line">                <span class="keyword">if</span> (str.contains(<span class="string">&quot;@&quot;</span>)) &#123;</span><br><span class="line">                    label = str.substring(<span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 链接拼接</span></span><br><span class="line">                    String urlStr = <span class="string">&quot;https://www.javanav.com/interview/&quot;</span> + str + <span class="string">&quot;.html&quot;</span>; <span class="comment">// 网址</span></span><br><span class="line">                    URL url = <span class="keyword">new</span> URL(urlStr);</span><br><span class="line">                    String result = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(url.openStream()))</span><br><span class="line">                            .lines().parallel().collect(Collectors.joining(System.lineSeparator()));</span><br><span class="line">                    <span class="comment">// 调用爬取入口</span></span><br><span class="line">                    Test1.demo1(result, label);</span><br><span class="line">                    <span class="comment">// 读取太快会被反爬虫</span></span><br><span class="line">                    Thread.sleep(<span class="number">10</span> * <span class="number">3</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException | InterruptedException e) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="控制台打印结果（部分）"><a href="#控制台打印结果（部分）" class="headerlink" title="控制台打印结果（部分）"></a>控制台打印结果（部分）</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">==和equals的区别是什么?	 Java基础	 &lt;ul&gt;   &lt;li&gt;== 是关系运算符，equals() 是方法，结果都返回布尔值&lt;/li&gt;   &lt;li&gt;Object 的 == 和 equals() 比较的都是地址，作用相同&lt;/li&gt;  &lt;/ul&gt;    &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;== 作用：&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;基本类型，比较值是否相等&lt;/li&gt;   &lt;li&gt;引用类型，比较内存地址值是否相等&lt;/li&gt;   &lt;li&gt;不能比较没有父子关系的两个对象&lt;/li&gt;  &lt;/ul&gt;    &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;equals()方法的作用：&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;JDK 中的类一般已经重写了 equals()，比较的是内容&lt;/li&gt;   &lt;li&gt;自定义类如果没有重写 equals()，将调用父类（默认 Object 类）的 equals() 方法，Object 的 equals() 比较使用了 this == obj&lt;/li&gt;   &lt;li&gt;可以按照需求逻辑，重写对象的 equals() 方法（重写 equals方法，一般须重写 hashCode方法）&lt;/li&gt;  &lt;/ul&gt;  </span><br><span class="line">基本类型和包装类对象使用 == 和 equals进行比较的结果？	 Java基础	 &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;1、值不同，使用 ＝＝ 和 equals() 比较都返回 false&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;2、值相同&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;p&gt;使用 ＝＝ 比较：&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;基本类型 － 基本类型、基本类型 － 包装对象返回 true&lt;/li&gt;   &lt;li&gt;包装对象 － 包装对象，非同一个对象（对象的内存地址不同）返回 false；对象的内存地址相同返回 true，如下值等于 100 的两个 Integer 对象（原因是 JVM 缓存部分基本类型常用的包装类对象，如 Integer -128 ~ 127 是被缓存的）&lt;/li&gt;  &lt;/ul&gt;  &lt;pre&gt; &lt;code&gt; Integer i1 = 100; &amp;nbsp;Integer i2 = 100; &amp;nbsp;Integer i3 = 200; &amp;nbsp;Integer i4 = 200; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;System.out.println(i1==i2); //打印true &amp;nbsp;System.out.println(i3==i4); //打印false&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;使用 equals() 比较&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;包装对象－基本类型返回 true&lt;/li&gt;   &lt;li&gt;包装对象－包装对象返回 true&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:#000000&quot;&gt;3、不同类型的对象对比，返回 false&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;JDK1.8，实验代码&lt;/p&gt;  &lt;pre&gt; &lt;code &gt;byte b1 = 127; Byte b2 = new Byte(&quot;127&quot;); Byte b3 = new Byte(&quot;127&quot;); System.out.println(&quot;Byte 基本类型和包装对象使用 == 比较 : &quot; + (b1 == b2)); System.out.println(&quot;Byte 基本类型和包装对象使用 equals 比较 : &quot; + b2.equals(b1)); System.out.println(&quot;Byte 包装对象和包装对象使用 == 比较 : &quot; + (b2 == b3)); System.out.println(&quot;Byte 包装对象和包装对象使用 equals 比较 : &quot; + b2.equals(b3)); System.out.println();  short s1 = 12; Short s2 = new Short(&quot;12&quot;); Short s3 = new Short(&quot;12&quot;); System.out.println(&quot;Short 基本类型和包装对象使用 == 比较 : &quot; + (s1 == s2)); System.out.println(&quot;Short 基本类型和包装对象使用 equals 比较 : &quot; + s2.equals(s1)); System.out.println(&quot;Short 包装对象和包装对象使用 == 比较 : &quot; + (s2 == s3)); System.out.println(&quot;Short 包装对象和包装对象使用 equals 比较 : &quot; + s2.equals(s3)); System.out.println();  char c1 = &#x27;A&#x27;; Character c2 = new Character(&#x27;A&#x27;); Character c3 = new Character(&#x27;A&#x27;); System.out.println(&quot;Character 基本类型和包装对象使用 == 比较 : &quot; + (c1 == c2)); System.out.println(&quot;Character 基本类型和包装对象使用 equals 比较 : &quot; + c2.equals(c1)); System.out.println(&quot;Character 包装对象和包装对象使用 == 比较 : &quot; + (c2 == c3)); System.out.println(&quot;Character 包装对象和包装对象使用 equals 比较 : &quot; + c2.equals(c3)); System.out.println();  int i1 = 10000; Integer i2 = new Integer(10000); Integer i3 = new Integer(10000); System.out.println(&quot;Integer 基本类型和包装对象使用 == 比较 : &quot; + (i1 == i2)); System.out.println(&quot;Integer 基本类型和包装对象使用 equals 比较 : &quot; + i2.equals(i1)); System.out.println(&quot;Integer 包装对象和包装对象使用 == 比较 : &quot; + (i2 == i3)); System.out.println(&quot;Integer 包装对象和包装对象使用 equals 比较 : &quot; + i2.equals(i3)); System.out.println();  long l1 = 1000000000000000L; Long l2 = new Long(&quot;1000000000000000&quot;); Long l3 = new Long(&quot;1000000000000000&quot;); System.out.println(&quot;Long 基本类型和包装对象使用 == 比较 : &quot; + (l1 == l2)); System.out.println(&quot;Long 基本类型和包装对象使用 equals 比较 : &quot; + l2.equals(l1)); System.out.println(&quot;Long 包装对象和包装对象使用 == 比较 : &quot; + (l2 == l3)); System.out.println(&quot;Long 包装对象和包装对象使用 equals 比较 : &quot; + l2.equals(l3)); System.out.println();  float f1 = 10000.111F; Float f2 = new Float(&quot;10000.111&quot;); Float f3 = new Float(&quot;10000.111&quot;); System.out.println(&quot;Float 基本类型和包装对象使用 == 比较 : &quot; + (f1 == f2)); System.out.println(&quot;Float 基本类型和包装对象使用 equals 比较 : &quot; + f2.equals(f1)); System.out.println(&quot;Float 包装对象和包装对象使用 == 比较 : &quot; + (f2 == f3)); System.out.println(&quot;Float 包装对象和包装对象使用 equals 比较 : &quot; + f2.equals(f3)); System.out.println();  double d1 = 10000.111; Double d2 = new Double(&quot;10000.111&quot;); Double d3 = new Double(&quot;10000.111&quot;); System.out.println(&quot;Double 基本类型和包装对象使用 == 比较 : &quot; + (d1 == d2)); System.out.println(&quot;Double 基本类型和包装对象使用 equals 比较 : &quot; + d2.equals(d1)); System.out.println(&quot;Double 包装对象和包装对象使用 == 比较 : &quot; + (d2 == d3)); System.out.println(&quot;Double 包装对象和包装对象使用 equals 比较 : &quot; + d2.equals(d3)); System.out.println();  boolean bl1 = true; Boolean bl2 = new Boolean(&quot;true&quot;); Boolean bl3 = new Boolean(&quot;true&quot;); System.out.println(&quot;Boolean 基本类型和包装对象使用 == 比较 : &quot; + (bl1 == bl2)); System.out.println(&quot;Boolean 基本类型和包装对象使用 equals 比较 : &quot; + bl2.equals(bl1)); System.out.println(&quot;Boolean 包装对象和包装对象使用 == 比较 : &quot; + (bl2 == bl3)); System.out.println(&quot;Boolean 包装对象和包装对象使用 equals 比较 : &quot; + bl2.equals(bl3));&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&amp;nbsp;&lt;br&gt; 运行结果&lt;/p&gt;  &lt;pre&gt; &lt;code&gt;Byte 基本类型和包装对象使用 == 比较 : true Byte 基本类型和包装对象使用 equals 比较 : true Byte 包装对象和包装对象使用 == 比较 : false Byte 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Short 基本类型和包装对象使用 == 比较 : true Short 基本类型和包装对象使用 equals 比较 : true Short 包装对象和包装对象使用 == 比较 : false Short 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Character 基本类型和包装对象使用 == 比较 : true Character 基本类型和包装对象使用 equals 比较 : true Character 包装对象和包装对象使用 == 比较 : false Character 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Integer 基本类型和包装对象使用 == 比较 : true Integer 基本类型和包装对象使用 equals 比较 : true Integer 包装对象和包装对象使用 == 比较 : false Integer 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Long 基本类型和包装对象使用 == 比较 : true Long 基本类型和包装对象使用 equals 比较 : true Long 包装对象和包装对象使用 == 比较 : false Long 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Float 基本类型和包装对象使用 == 比较 : true Float 基本类型和包装对象使用 equals 比较 : true Float 包装对象和包装对象使用 == 比较 : false Float 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Double 基本类型和包装对象使用 == 比较 : true Double 基本类型和包装对象使用 equals 比较 : true Double 包装对象和包装对象使用 == 比较 : false Double 包装对象和包装对象使用 equals 比较 : true &amp;nbsp; Boolean 基本类型和包装对象使用 == 比较 : true Boolean 基本类型和包装对象使用 equals 比较 : true Boolean 包装对象和包装对象使用 == 比较 : false Boolean 包装对象和包装对象使用 equals 比较 : true&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&lt;br&gt; &amp;nbsp;&lt;/p&gt;  &lt;p&gt;ps：可以延伸一个问题，基本类型与包装对象的拆/装箱的过程&lt;/p&gt;</span><br><span class="line">什么是装箱？什么是拆箱？装箱和拆箱的执行过程？常见问题？	 Java基础	   &lt;p&gt;装箱：基本类型转变为包装器类型的过程。&lt;br&gt; 拆箱：包装器类型转变为基本类型的过程。&lt;/p&gt;  &lt;pre&gt; &lt;code &gt;//JDK1.5之前是不支持自动装箱和自动拆箱的，定义Integer对象，必须 Integer i = new Integer(8); &amp;nbsp; //JDK1.5开始，提供了自动装箱的功能，定义Integer对象可以这样 Integer i = 8; &amp;nbsp; int n = i;//自动拆箱&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&lt;br&gt; &amp;nbsp;&lt;/p&gt;  &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;2、装箱和拆箱的执行过程？&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;装箱是通过调用包装器类的 valueOf 方法实现的&lt;/li&gt;   &lt;li&gt;拆箱是通过调用包装器类的 xxxValue 方法实现的，xxx代表对应的基本数据类型。&lt;/li&gt;   &lt;li&gt;如int装箱的时候自动调用Integer的valueOf(int)方法；Integer拆箱的时候自动调用Integer的intValue方法。&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;&lt;span style=&quot;color:#000000&quot;&gt;&lt;strong&gt;3、常见问题？&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;整型的包装类 valueOf 方法返回对象时，在常用的取值范围内，会返回缓存对象。&lt;/li&gt;   &lt;li&gt;浮点型的包装类 valueOf 方法返回新的对象。&lt;/li&gt;   &lt;li&gt;布尔型的包装类 valueOf 方法 Boolean类的静态常量 TRUE | FALSE。&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;实验代码&lt;/p&gt;  &lt;pre&gt; &lt;code&gt;Integer i1 = 100; Integer i2 = 100; Integer i3 = 200; Integer i4 = 200; System.out.println(i1 == i2);//true System.out.println(i3 == i4);//false &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; Double d1 = 100.0; Double d2 = 100.0; Double d3 = 200.0; Double d4 = 200.0; System.out.println(d1 == d2);//false System.out.println(d3 == d4);//false &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; Boolean b1 = false; Boolean b2 = false; Boolean b3 = true; Boolean b4 = true; System.out.println(b1 == b2);//true System.out.println(b3 == b4);//true&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;包含算术运算会触发自动拆箱。&lt;/li&gt;   &lt;li&gt;存在大量自动装箱的过程，如果装箱返回的包装对象不是从缓存中获取，会创建很多新的对象，比较消耗内存。&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;  &lt;pre&gt; &lt;code &gt;Integer s1 = 0; long t1 = System.currentTimeMillis(); for(int i = 0; i &amp;lt;1000 * 10000; i++)&#123; &amp;nbsp;&amp;nbsp; &amp;nbsp;s1 += i; &#125; long t2 = System.currentTimeMillis(); System.out.println(&quot;使用Integer，递增相加耗时：&quot; + (t2 - t1));//使用Integer，递增相加耗时：68 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; int s2 = 0; long t3 = System.currentTimeMillis(); for(int i = 0; i &amp;lt;1000 * 10000; i++)&#123; &amp;nbsp;&amp;nbsp; &amp;nbsp;s2 += i; &#125; long t4 = System.currentTimeMillis(); System.out.println(&quot;使用int，递增相加耗时：&quot; + (t4 - t3));//使用int，递增相加耗时：6&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;ps：可深入研究一下 javap 命令，看下自动拆箱、装箱后的class文件组成。&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看一下 JDK 中 Byte、Short、Character、Integer、Long、Boolean、Float、Double的 valueOf 和 xxxValue 方法的源码（xxx代表基本类型如intValue）。&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;</span><br><span class="line">hashCode()相同，equals()也一定为true吗？	 Java基础	 &lt;p&gt;首先，答案肯定是不一定。同时反过来 equals() 为true，hashCode() 也不一定相同。&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;类的 hashCode() 方法和 equals() 方法都可以重写，返回的值完全在于自己定义。&lt;/li&gt;   &lt;li&gt;hashCode() 返回该对象的哈希码值；equals() 返回两个对象是否相等。&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;关于 hashCode() 和 equals() 是方法是有一些 常规协定：&lt;/p&gt;  &lt;p&gt;1、两个对象用 equals() 比较返回true，那么两个对象的hashCode()方法必须返回相同的结果。&lt;/p&gt;  &lt;p&gt;2、两个对象用 equals() 比较返回false，不要求hashCode()方法也一定返回不同的值，但是最好返回不同值，以提高哈希表性能。&lt;/p&gt;  &lt;p&gt;3、重写 equals() 方法，必须重写 hashCode() 方法，以保证 equals() 方法相等时两个对象 hashcode() 返回相同的值。&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;  &lt;p&gt;就像打人是你的能力，但打伤了就违法了。重写 equals 和 hashCode 方法返回是否为 true 是你的能力，但你不按照上述协议进行控制，在用到对象 hash 和 equals 逻辑判断相等时会出现意外情况，如 HashMap 的 key 是否相等。&lt;/p&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;</span><br><span class="line">final在java中的作用	 Java基础	   &lt;ul&gt;   &lt;li&gt;被 final 修饰的类，不能够被继承&lt;/li&gt;   &lt;li&gt;被 final 修饰的成员变量必须要初始化，赋初值后不能再重新赋值(可以调用对象方法修改属性值)。对基本类型来说是其值不可变；对引用变量来说其引用不可变，即不能再指向其他的对象&lt;/li&gt;   &lt;li&gt;被 final 修饰的方法不能重写&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;</span><br><span class="line">final finally finalize()区别	 Java基础	 &lt;ul&gt;   &lt;li&gt;final 表示最终的、不可改变的。用于修饰类、方法和变量。final 修饰的类不能被继承；final 方法也同样只能使用，不能重写，但能够重载；final 修饰的成员变量必须在声明时给定初值或者在构造方法内设置初始值，只能读取，不可修改；final 修饰的局部变量必须在声明时给定初值；final 修饰的变量是非基本类型，对象的引用地址不能变，但对象的属性值可以改变&lt;/li&gt;   &lt;li&gt;finally 异常处理的一部分，它只能用在 try/catch 语句中，表示希望 finally 语句块中的代码最后一定被执行（存在一些情况导致 finally 语句块不会被执行，如 jvm 结束）&lt;/li&gt;   &lt;li&gt;finalize() 是在 java.lang.Object 里定义的，Object 的 finalize() 方法什么都不做，对象被回收时 finalize() 方法会被调用。Java 技术允许使用 finalize() 方法在垃圾收集器将对象从内存中清除出去之前做必要清理工作，在垃圾收集器删除对象之前被调用的。一般情况下，此方法由JVM调用。特殊情况下，可重写 finalize() 方法，当对象被回收的时候释放一些资源，须调用 super.finalize() 。&lt;/li&gt;  &lt;/ul&gt;  </span><br><span class="line">finally语句块一定执行吗？	 Java基础	   &lt;ul&gt;   &lt;li&gt;直接返回未执行到 try-finally 语句块&lt;/li&gt;   &lt;li&gt;抛出异常未执行到 try-finally 语句块&lt;/li&gt;   &lt;li&gt;系统退出未执行到 finally 语句块&lt;/li&gt;  &lt;/ul&gt;  &lt;p&gt;等...&lt;/p&gt;  &lt;p&gt;代码如下&lt;/p&gt;  &lt;pre&gt; &lt;code &gt;public static String test() &#123;     String str = null;     int i = 0;     if (i == 0) &#123;         return str;//直接返回未执行到finally语句块     &#125;     try &#123;         System.out.println(&quot;try...&quot;);         return str;     &#125; finally &#123;         System.out.println(&quot;finally...&quot;);     &#125; &#125;   public static String test2() &#123;     String str = null;     int i = 0;     i = i / 0;//抛出异常未执行到finally语句块     try &#123;         System.out.println(&quot;try...&quot;);         return str;     &#125; finally &#123;         System.out.println(&quot;finally...&quot;);     &#125; &#125;   public static String test3() &#123;     String str = null;     try &#123;         System.out.println(&quot;try...&quot;);         System.exit(0);//系统退出未执行到finally语句块         return str;     &#125; finally &#123;         System.out.println(&quot;finally...&quot;);     &#125; &#125;&lt;/code&gt;&lt;/pre&gt;  &lt;p&gt;&amp;nbsp;&lt;/p&gt;</span><br><span class="line">final与static的区别	 Java基础	   &lt;ul&gt;   &lt;li&gt;都可以修饰类、方法、成员变量。&lt;/li&gt;   &lt;li&gt;都不能用于修饰构造方法。&lt;/li&gt;   &lt;li&gt;static 可以修饰类的代码块，final 不可以。&lt;/li&gt;   &lt;li&gt;static 不可以修饰方法内的局部变量，final 可以。&lt;/li&gt;  &lt;/ul&gt;    &lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:#000000&quot;&gt;static：&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;static 修饰表示静态或全局，被修饰的属性和方法属于类，可以用类名.静态属性 / 方法名 访问&lt;/li&gt;   &lt;li&gt;static 修饰的代码块表示静态代码块，当 Java 虚拟机（JVM）加载类时，就会执行该代码块,只会被执行一次&lt;/li&gt;   &lt;li&gt;static 修饰的属性，也就是类变量，是在类加载时被创建并进行初始化，只会被创建一次&lt;/li&gt;   &lt;li&gt;static 修饰的变量可以重新赋值&lt;/li&gt;   &lt;li&gt;static 方法中不能用 this 和 super 关键字&lt;/li&gt;   &lt;li&gt;static 方法必须被实现，而不能是抽象的abstract&lt;/li&gt;   &lt;li&gt;static 方法不能被重写&lt;/li&gt;  &lt;/ul&gt;    &lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color:#000000&quot;&gt;final：&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;final 修饰表示常量、一旦创建不可改变&lt;/li&gt;   &lt;li&gt;final 标记的成员变量必须在声明的同时赋值，或在该类的构造方法中赋值，不可以重新赋值&lt;/li&gt;   &lt;li&gt;final 方法不能被子类重写&lt;/li&gt;   &lt;li&gt;final 类不能被继承，没有子类，final 类中的方法默认是 final 的&lt;/li&gt;  &lt;/ul&gt;    &lt;p&gt;final 和 static 修饰成员变量加载过程例子&lt;/p&gt;  &lt;pre&gt; &lt;code &gt;import java.util.Random;   public class TestStaticFinal &#123;   public static void main(String[] args) &#123; StaticFinal sf1 = new StaticFinal(); StaticFinal sf2 = new StaticFinal();  System.out.println(sf1.fValue == sf2.fValue);//打印false System.out.println(sf1.sValue == sf2.sValue);//打印true &#125; &#125;   class StaticFinal &#123;  final int fValue = new Random().nextInt(); static int sValue = new Random().nextInt();  &#125;&lt;/code&gt;&lt;/pre&gt;  </span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://gitflhub.github.io/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/" title="Markdown 制作 Anki 卡片" target="_blank" rel="external">https://gitflhub.github.io/2021/05/26/Markdown-%E5%88%B6%E4%BD%9C-Anki-%E5%8D%A1%E7%89%87/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/GitFLHub" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/Ron.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/GitFLHub" target="_blank"><span class="text-dark">Ron</span><small class="ml-1x">AI enthusiasts</small></a></h3>
+        <div>程序员一枚，主攻方向：数据结构，机器学习，模式识别，图像识别。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/05/26/JAVA%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" title="JAVA虚拟机基础概念"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/05/26/Markdown-%E5%85%AC%E5%BC%8F%E7%BC%96%E8%BE%91/" title="Markdown 公式编辑"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter" style="padding-bottom: 0px;">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/GitFLHub" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <small>&copy; 蜀20210124752021</small>
+        
+        <!-- 
+		Ron
+		<div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+		-->
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '72FLPOtKmzUN8VrHcGhcIaEj-gzGzoHsz',
+    appKey: 'PtPb7cDWmwbyXkNC7U7qfzvJ',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

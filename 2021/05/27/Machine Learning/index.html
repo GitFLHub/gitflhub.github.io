@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Machine Learning | RON BLOG</title>
+  <meta name="description" content="学习库Numpy 科学计算库 Pandas 数据分析可视化 Matplotlib 数据可视化 Scikit-learn 机器学习库 知识点线性代数矩阵数组 算法监督学习分类：最终属于1还是0 回归：最终一个具体值 例子1：房价预测（回归） 例子2：肿瘤预测（分类）一个属性  两个属性（特征）  无穷多特征：向量机 监督学习算法代价函数   一个参数的代价函数可以化为一个一元二次函数 两个参数的代价">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning">
+<meta property="og:url" content="https://gitflhub.github.io/2021/05/27/Machine%20Learning/index.html">
+<meta property="og:site_name" content="RON BLOG">
+<meta property="og:description" content="学习库Numpy 科学计算库 Pandas 数据分析可视化 Matplotlib 数据可视化 Scikit-learn 机器学习库 知识点线性代数矩阵数组 算法监督学习分类：最终属于1还是0 回归：最终一个具体值 例子1：房价预测（回归） 例子2：肿瘤预测（分类）一个属性  两个属性（特征）  无穷多特征：向量机 监督学习算法代价函数   一个参数的代价函数可以化为一个一元二次函数 两个参数的代价">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.ron.zone/20210527232253.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232327.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232314.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232337.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232346.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232354.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232404.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232414.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232425.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232437.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232448.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232506.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232516.png">
+<meta property="og:image" content="http://img.ron.zone/20210527232523.png">
+<meta property="article:published_time" content="2021-05-27T13:56:43.055Z">
+<meta property="article:modified_time" content="2021-05-27T17:40:46.681Z">
+<meta property="article:author" content="Ron">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.ron.zone/20210527232253.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://gitflhub.github.io/2021/05/27/Machine%20Learning/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="RON BLOG" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/GitFLHub" target="_blank">
+          <img class="img-circle img-rotate" src="/images/Ron.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Ron</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">AI enthusiasts</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Chengdu, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/GitFLHub" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%AD%E8%A8%80/">语言</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/">资料整理</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Anki/" rel="tag">Anki</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bean/" rel="tag">Bean</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-%E6%B3%A8%E8%A7%A3/" rel="tag">Java 注解</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/" rel="tag">LaTex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octave/" rel="tag">Octave</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" rel="tag">数学公式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%94%81/" rel="tag">锁</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/AOP/" style="font-size: 13px;">AOP</a> <a href="/tags/Anki/" style="font-size: 13px;">Anki</a> <a href="/tags/Bean/" style="font-size: 14px;">Bean</a> <a href="/tags/JVM/" style="font-size: 13px;">JVM</a> <a href="/tags/Java-%E6%B3%A8%E8%A7%A3/" style="font-size: 13px;">Java 注解</a> <a href="/tags/LaTex/" style="font-size: 13px;">LaTex</a> <a href="/tags/Machine-Learning/" style="font-size: 13px;">Machine Learning</a> <a href="/tags/Octave/" style="font-size: 14px;">Octave</a> <a href="/tags/Spring/" style="font-size: 13px;">Spring</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 13px;">排序</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" style="font-size: 13px;">数学公式</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 13px;">虚拟机</a> <a href="/tags/%E9%94%81/" style="font-size: 13px;">锁</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">学习库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">线性代数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">矩阵</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.1.</span> <span class="toc-text">监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%AD%901%EF%BC%9A%E6%88%BF%E4%BB%B7%E9%A2%84%E6%B5%8B%EF%BC%88%E5%9B%9E%E5%BD%92%EF%BC%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">例子1：房价预测（回归）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%AD%902%EF%BC%9A%E8%82%BF%E7%98%A4%E9%A2%84%E6%B5%8B%EF%BC%88%E5%88%86%E7%B1%BB%EF%BC%89"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">例子2：肿瘤预测（分类）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">监督学习算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.3.1.</span> <span class="toc-text">代价函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-number">1.2.1.3.2.</span> <span class="toc-text">多元梯度下降</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E7%BC%A9%E6%94%BE"><span class="toc-number">1.2.1.3.3.</span> <span class="toc-text">特征缩放</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.2.</span> <span class="toc-text">非监督学习</span></a></li></ol></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Machine Learning" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Machine Learning
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/05/27/Machine%20Learning/" class="article-date">
+	  <time datetime="2021-05-27T13:56:43.055Z" itemprop="datePublished">2021-05-27</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/AI/">AI</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Machine-Learning/" rel="tag">Machine Learning</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/27/Machine%20Learning/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 311(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="学习库"><a href="#学习库" class="headerlink" title="学习库"></a>学习库</h1><p>Numpy 科学计算库</p>
+<p>Pandas 数据分析可视化</p>
+<p>Matplotlib 数据可视化</p>
+<p>Scikit-learn 机器学习库</p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h3><h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><p>数组</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>分类：最终属于1还是0</p>
+<p>回归：最终一个具体值</p>
+<h4 id="例子1：房价预测（回归）"><a href="#例子1：房价预测（回归）" class="headerlink" title="例子1：房价预测（回归）"></a>例子1：房价预测（回归）</h4><p><img src="http://img.ron.zone/20210527232253.png" alt="image-20210429100557314-1620280617770"></p>
+<h4 id="例子2：肿瘤预测（分类）"><a href="#例子2：肿瘤预测（分类）" class="headerlink" title="例子2：肿瘤预测（分类）"></a>例子2：肿瘤预测（分类）</h4><p>一个属性</p>
+<p><img src="http://img.ron.zone/20210527232327.png" alt="image-20210429100923353"></p>
+<p>两个属性（特征）</p>
+<p><img src="http://img.ron.zone/20210527232314.png" alt="image-20210429101713120"></p>
+<p>无穷多特征：向量机</p>
+<h4 id="监督学习算法"><a href="#监督学习算法" class="headerlink" title="监督学习算法"></a>监督学习算法</h4><h5 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h5><p><img src="http://img.ron.zone/20210527232337.png" alt="image-20210429105008588"></p>
+<p><img src="http://img.ron.zone/20210527232346.png" /></p>
+<p><img src="http://img.ron.zone/20210527232354.png" alt="image-20210429105552665"></p>
+<p>一个参数的代价函数可以化为一个一元二次函数</p>
+<p>两个参数的代价函数可以化为一个二元二次函数</p>
+<p>更多参数可以考虑梯度下降的方式</p>
+<p><img src="http://img.ron.zone/20210527232404.png" alt="image-20210429163240652"></p>
+<p>梯度下降需要考虑步伐大小，大小学习速率过慢，太大会错过最优解，甚至会导致发散</p>
+<p><img src="http://img.ron.zone/20210527232414.png" alt="image-20210429164519908"></p>
+<p>步长α是动态调整的， </p>
+<p>梯度下降只适用于求解线性回归。（为弓形图像）</p>
+<p><img src="http://img.ron.zone/20210527232425.png" alt="image-20210429170959267"></p>
+<p>相比计算出代价函数的最小值，梯度下降更适用于数据量较大的训练集</p>
+<h5 id="多元梯度下降"><a href="#多元梯度下降" class="headerlink" title="多元梯度下降"></a>多元梯度下降</h5><p><img src="http://img.ron.zone/20210527232437.png" alt="image-20210430164149341"></p>
+<h5 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h5><p><img src="http://img.ron.zone/20210527232448.png" alt="image-20210430165959029"></p>
+<p>也可以采取减去均值再除以范围</p>
+<p><img src="http://img.ron.zone/20210527232506.png" alt="image-20210430170710002"></p>
+<p>特征或多项式回归</p>
+<p>直接求解参数的方法</p>
+<p><img src="http://img.ron.zone/20210527232516.png" alt="image-20210430174937134"></p>
+<h3 id="非监督学习"><a href="#非监督学习" class="headerlink" title="非监督学习"></a>非监督学习</h3><p>聚类算法</p>
+<p><img src="http://img.ron.zone/20210527232523.png" alt="image-20210429102250061"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://gitflhub.github.io/2021/05/27/Machine%20Learning/" title="Machine Learning" target="_blank" rel="external">https://gitflhub.github.io/2021/05/27/Machine%20Learning/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/GitFLHub" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/Ron.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/GitFLHub" target="_blank"><span class="text-dark">Ron</span><small class="ml-1x">AI enthusiasts</small></a></h3>
+        <div>程序员一枚，主攻方向：数据结构，机器学习，模式识别，图像识别。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2021/05/28/Octave-%E5%9F%BA%E7%A1%80/" title="Octave 基础"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2021/05/27/Octave%20%E7%BB%98%E5%88%B6%E5%9B%BE%E5%83%8F/" title="Octave 绘制图像"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter" style="padding-bottom: 0px;">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/GitFLHub" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <small>&copy; 蜀20210124752021</small>
+        
+        <!-- 
+		Ron
+		<div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+		-->
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '72FLPOtKmzUN8VrHcGhcIaEj-gzGzoHsz',
+    appKey: 'PtPb7cDWmwbyXkNC7U7qfzvJ',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
