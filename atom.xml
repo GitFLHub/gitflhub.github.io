@@ -6,7 +6,7 @@
   <link href="https://gitflhub.github.io/atom.xml" rel="self"/>
   
   <link href="https://gitflhub.github.io/"/>
-  <updated>2021-05-31T13:03:42.979Z</updated>
+  <updated>2021-07-05T14:37:48.031Z</updated>
   <id>https://gitflhub.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开源数据集</title>
+    <link href="https://gitflhub.github.io/2021/07/05/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>https://gitflhub.github.io/2021/07/05/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
+    <published>2021-07-05T13:49:03.000Z</published>
+    <updated>2021-07-05T14:37:48.031Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开放数据集"><a href="#开放数据集" class="headerlink" title="开放数据集"></a>开放数据集</h2><p>•     DataHub (<a href="http://datahub.io/dataset">http://datahub.io/dataset</a>)<br>•     World Health Organization (<a href="http://www.who.int/research/en/">http://www.who.int/research/en/</a>)<br>•     Data.gov (<a href="http://data.gov">http://data.gov</a>)<br>•     European Union Open Data Portal (<a href="http://open-data.europa.eu/en/data/">http://open-data.europa.eu/en/data/</a>)<br>•     Amazon Web Service public datasets (<a href="http://aws.amazon.com/datasets">http://aws.amazon.com/datasets</a>)<br>•     Facebook Graph (<a href="http://developers.facebook.com/docs/graph-api">http://developers.facebook.com/docs/graph-api</a>)<br>•     Healthdata.gov (<a href="http://www.healthdata.gov">http://www.healthdata.gov</a>)<br>•     Google Trends (<a href="http://www.google.com/trends/explore">http://www.google.com/trends/explore</a>)<br>•     Google Finance (<a href="https://www.google.com/finance">https://www.google.com/finance</a>)<br>•     Google Books Ngrams (<a href="http://storage.googleapis.com/books/ngrams/books/datasetsv2.html">http://storage.googleapis.com/books/ngrams/books/datasetsv2.html</a>)<br>•     Machine Learning Repository (<a href="http://archive.ics.uci.edu/ml/">http://archive.ics.uci.edu/ml/</a>)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;开放数据集&quot;&gt;&lt;a href=&quot;#开放数据集&quot; class=&quot;headerlink&quot; title=&quot;开放数据集&quot;&gt;&lt;/a&gt;开放数据集&lt;/h2&gt;&lt;p&gt;•     DataHub (&lt;a href=&quot;http://datahub.io/dataset&quot;&gt;http://</summary>
+      
+    
+    
+    
+    <category term="AI" scheme="https://gitflhub.github.io/categories/AI/"/>
+    
+    
+    <category term="开放数据集" scheme="https://gitflhub.github.io/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vocabulary</title>
+    <link href="https://gitflhub.github.io/2021/06/03/Vocabulary/"/>
+    <id>https://gitflhub.github.io/2021/06/03/Vocabulary/</id>
+    <published>2021-06-03T09:17:43.000Z</published>
+    <updated>2021-07-05T14:06:57.273Z</updated>
+    
+    <content type="html"><![CDATA[<p>threshold</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;threshold&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="English" scheme="https://gitflhub.github.io/categories/English/"/>
+    
+    
+    <category term="生词" scheme="https://gitflhub.github.io/tags/%E7%94%9F%E8%AF%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>Octave 基础</title>
@@ -43,11 +92,28 @@
   </entry>
   
   <entry>
+    <title>ASP</title>
+    <link href="https://gitflhub.github.io/2021/05/28/ASP_NET%20CORE%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>https://gitflhub.github.io/2021/05/28/ASP_NET%20CORE%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</id>
+    <published>2021-05-28T08:01:22.000Z</published>
+    <updated>2021-07-05T14:06:57.260Z</updated>
+    
+    
+    
+    
+    <category term="NET" scheme="https://gitflhub.github.io/categories/NET/"/>
+    
+    
+    <category term="ASP.NET" scheme="https://gitflhub.github.io/tags/ASP-NET/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Machine Learning</title>
     <link href="https://gitflhub.github.io/2021/05/27/Machine%20Learning/"/>
     <id>https://gitflhub.github.io/2021/05/27/Machine%20Learning/</id>
     <published>2021-05-27T13:56:43.055Z</published>
-    <updated>2021-06-02T15:36:32.401Z</updated>
+    <updated>2021-07-05T14:06:57.276Z</updated>
     
     <content type="html"><![CDATA[<h1 id="学习库"><a href="#学习库" class="headerlink" title="学习库"></a>学习库</h1><p>Numpy 科学计算库</p><p>Pandas 数据分析可视化</p><p>Matplotlib 数据可视化</p><p>Scikit-learn 机器学习库</p><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h3 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h3><h4 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h4><p>数组</p><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>分类：最终属于1还是0</p><p>回归：最终一个具体值</p><h4 id="例子1：房价预测（回归）"><a href="#例子1：房价预测（回归）" class="headerlink" title="例子1：房价预测（回归）"></a>例子1：房价预测（回归）</h4><p><img src="http://img.ron.zone/20210527232253.png" alt="image-20210429100557314-1620280617770"></p><h4 id="例子2：肿瘤预测（分类）"><a href="#例子2：肿瘤预测（分类）" class="headerlink" title="例子2：肿瘤预测（分类）"></a>例子2：肿瘤预测（分类）</h4><p>一个属性</p><p><img src="http://img.ron.zone/20210527232327.png" alt="image-20210429100923353"></p><p>两个属性（特征）</p><p><img src="http://img.ron.zone/20210527232314.png" alt="image-20210429101713120"></p><p>无穷多特征：向量机</p><h4 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h4><h5 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h5><p><img src="http://img.ron.zone/20210527232337.png" alt="image-20210429105008588"></p><p><img src="http://img.ron.zone/20210527232346.png" /></p><p><img src="http://img.ron.zone/20210527232354.png" alt="image-20210429105552665"></p><p>一个参数的代价函数可以化为一个一元二次函数</p><p>两个参数的代价函数可以化为一个二元二次函数</p><p>更多参数可以考虑梯度下降的方式</p><p><img src="http://img.ron.zone/20210527232404.png" alt="image-20210429163240652"></p><p>梯度下降需要考虑步伐大小，大小学习速率过慢，太大会错过最优解，甚至会导致发散</p><p><img src="http://img.ron.zone/20210527232414.png" alt="image-20210429164519908"></p><p>步长α是动态调整的， </p><p>梯度下降只适用于求解线性回归。（为弓形图像）</p><p><img src="http://img.ron.zone/20210527232425.png" alt="image-20210429170959267"></p><h5 id="多元梯度下降"><a href="#多元梯度下降" class="headerlink" title="多元梯度下降"></a>多元梯度下降</h5><p><img src="http://img.ron.zone/20210527232437.png" alt="image-20210430164149341"></p><h5 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h5><p><img src="http://img.ron.zone/20210527232448.png" alt="image-20210430165959029"></p><p>也可以采取减去均值再除以范围</p><p><img src="http://img.ron.zone/20210527232506.png" alt="image-20210430170710002"></p><p>特征或多项式回归</p><h5 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程<img src="http://img.ron.zone/20210527232516.png" alt="image-20210430174937134"></h5><p>如果X ^ TX是不可逆的，常见的原因可能是:</p><ul><li><p>冗余特征，即两个特征密切相关(即线性相关)</p></li><li><p>太多的特性(例如m≤n)。在这种情况下，删除一些特性或使用“正则化”</p></li></ul><h5 id="正规方程和梯度下降比较"><a href="#正规方程和梯度下降比较" class="headerlink" title="正规方程和梯度下降比较"></a>正规方程和梯度下降比较</h5><div class="table-container"><table><thead><tr><th style="text-align:left">梯度下降</th><th style="text-align:left">正规方程需要</th></tr></thead><tbody><tr><td style="text-align:left">需要选择确定学习速率α</td><td style="text-align:left">不需要选择确定学习速率α</td></tr><tr><td style="text-align:left">需要多次迭代</td><td style="text-align:left">不需要迭代</td></tr><tr><td style="text-align:left">O (kn^2)</td><td style="text-align:left">O (n^3), 需要计算 X^TX的逆矩阵</td></tr><tr><td style="text-align:left">n 非常大时任然适用</td><td style="text-align:left">n太大计算缓慢</td></tr></tbody></table></div><p>聚类算法</p><p><img src="http://img.ron.zone/20210527232523.png" alt="image-20210429102250061"></p>]]></content>
     
@@ -213,9 +279,9 @@
     <category term="Java" scheme="https://gitflhub.github.io/categories/Java/"/>
     
     
-    <category term="Spring" scheme="https://gitflhub.github.io/tags/Spring/"/>
-    
     <category term="Bean" scheme="https://gitflhub.github.io/tags/Bean/"/>
+    
+    <category term="Spring" scheme="https://gitflhub.github.io/tags/Spring/"/>
     
   </entry>
   
