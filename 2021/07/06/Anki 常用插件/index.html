@@ -17,23 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>JVM 虚拟机基础 | RON BLOG</title>
-  <meta name="description" content="JVM中的堆一般分为三部分，新生代、老年代和永久代。 新生代主要是用来存放新生的对象。一般占据堆空间的1&#x2F;3，由于频繁创建对象，所以新生代会频繁触发MinorGC进行垃圾回收。新生代分为Eden区、ServivorFrom、ServivorTo三个区。 Eden区：Java新对象的出生地(如果新创建的对象占用内存很大则直接分配给老年代)。当Eden区内存不够的时候就会触发一次MinorGc，对新生">
+  <title>Anki 常用插件 | RON BLOG</title>
+  <meta name="description" content="Anki 插件推荐    Anki 插件名称 插件介绍 插件ID     AnkiConnect 实现 Anki 与外界通信 2055492159   Enhance main window 增强主页 877182321   Review Heatmap 复习热力图，记录学习日历 1771074083   Evernote Importer 支持印象笔记 831016260   Markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM 虚拟机基础">
-<meta property="og:url" content="https://gitflhub.github.io/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="Anki 常用插件">
+<meta property="og:url" content="https://gitflhub.github.io/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/index.html">
 <meta property="og:site_name" content="RON BLOG">
-<meta property="og:description" content="JVM中的堆一般分为三部分，新生代、老年代和永久代。 新生代主要是用来存放新生的对象。一般占据堆空间的1&#x2F;3，由于频繁创建对象，所以新生代会频繁触发MinorGC进行垃圾回收。新生代分为Eden区、ServivorFrom、ServivorTo三个区。 Eden区：Java新对象的出生地(如果新创建的对象占用内存很大则直接分配给老年代)。当Eden区内存不够的时候就会触发一次MinorGc，对新生">
+<meta property="og:description" content="Anki 插件推荐    Anki 插件名称 插件介绍 插件ID     AnkiConnect 实现 Anki 与外界通信 2055492159   Enhance main window 增强主页 877182321   Review Heatmap 复习热力图，记录学习日历 1771074083   Evernote Importer 支持印象笔记 831016260   Markdown">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://img.ron.zone/oneblog/article/20210323010135389.png">
-<meta property="article:published_time" content="2021-05-26T15:58:38.699Z">
-<meta property="article:modified_time" content="2021-05-26T16:00:50.771Z">
+<meta property="article:published_time" content="2021-07-06T02:44:21.000Z">
+<meta property="article:modified_time" content="2021-07-06T03:06:58.051Z">
 <meta property="article:author" content="Ron">
-<meta property="article:tag" content="虚拟机">
+<meta property="article:tag" content="Anki">
+<meta property="article:tag" content="浏览器插件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://img.ron.zone/oneblog/article/20210323010135389.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://gitflhub.github.io/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/index.html">
+  <link rel="canonical" href="https://gitflhub.github.io/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/index.html">
   
     <link rel="alternate" href="/atom.xml" title="RON BLOG" type="application/atom+xml">
   
@@ -251,21 +250,21 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%94%9F%E4%BB%A3"><span class="toc-number">1.</span> <span class="toc-text">新生代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Eden%E5%8C%BA%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">Eden区：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ServivorTo%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">ServivorTo：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ServivorFrom"><span class="toc-number">1.3.</span> <span class="toc-text">ServivorFrom:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%81%E5%B9%B4%E4%BB%A3"><span class="toc-number">2.</span> <span class="toc-text">老年代</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91MinorGC%E7%9A%84%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">触发MinorGC的条件：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B8%E4%B9%85%E4%BB%A3-%E5%85%83%E6%95%B0%E6%8D%AE%E5%8C%BA"><span class="toc-number">3.</span> <span class="toc-text">永久代(元数据区)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MajorGC%E5%92%8CFullGC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">MajorGC和FullGC的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-GC"><span class="toc-number">4.1.</span> <span class="toc-text">Full GC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Major-GC"><span class="toc-number">4.2.</span> <span class="toc-text">Major GC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MinorGC-%E8%A7%A6%E5%8F%91%E6%9C%BA%E5%88%B6"><span class="toc-number">4.3.</span> <span class="toc-text">MinorGC 触发机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MajorGC-%E8%A7%A6%E5%8F%91%E6%9C%BA%E5%88%B6"><span class="toc-number">4.4.</span> <span class="toc-text">MajorGC 触发机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-GC%E8%A7%A6%E5%8F%91%E6%9C%BA%E5%88%B6%EF%BC%9A"><span class="toc-number">4.5.</span> <span class="toc-text">Full GC触发机制：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"> </span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Anki-%E6%8F%92%E4%BB%B6%E6%8E%A8%E8%8D%90"><span class="toc-number">1.</span> <span class="toc-text">Anki 插件推荐</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-JVM-虚拟机基础" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-Anki 常用插件" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      JVM 虚拟机基础
+      Anki 常用插件
     </h1>
   
 
@@ -273,20 +272,20 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="article-date">
-	  <time datetime="2021-05-26T15:58:38.699Z" itemprop="datePublished">2021-05-26</time>
+	<a href="/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/" class="article-date">
+	  <time datetime="2021-07-06T02:44:21.000Z" itemprop="datePublished">2021-07-06</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="/categories/%E8%B5%84%E6%96%99%E6%95%B4%E7%90%86/">资料整理</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a>
+	<a class="article-tag-link-link" href="/tags/Anki/" rel="tag">Anki</a>, <a class="article-tag-link-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" rel="tag">浏览器插件</a>
   </span>
 
 
@@ -299,40 +298,63 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 86(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p><img src="http://img.ron.zone/oneblog/article/20210323010135389.png" alt="file"><br>JVM中的堆一般分为三部分，新生代、老年代和永久代。</p>
-<h3 id="新生代"><a href="#新生代" class="headerlink" title="新生代"></a>新生代</h3><p>主要是用来存放新生的对象。一般占据堆空间的1/3，由于频繁创建对象，所以新生代会频繁触发MinorGC进行垃圾回收。<br>新生代分为Eden区、ServivorFrom、ServivorTo三个区。</p>
-<h4 id="Eden区："><a href="#Eden区：" class="headerlink" title="Eden区："></a>Eden区：</h4><p>Java新对象的出生地(如果新创建的对象占用内存很大则直接分配给老年代)。当Eden区内存不够的时候就会触发一次MinorGc，对新生代区进行一次垃圾回收。</p>
-<h4 id="ServivorTo："><a href="#ServivorTo：" class="headerlink" title="ServivorTo："></a>ServivorTo：</h4><p>保留了一次MinorGc过程中的幸存者。</p>
-<h4 id="ServivorFrom"><a href="#ServivorFrom" class="headerlink" title="ServivorFrom:"></a>ServivorFrom:</h4><p>上一次GC的幸存者，作为这一次GC的被扫描者。<br>当JVM无法为新建对象分配内存空间的时候(Eden区满的时候)，JVM触发MinorGc。<strong>因此新生代空间占用越低，MinorGc越频繁。MinorGC采用复制算法。</strong></p>
-<h3 id="老年代"><a href="#老年代" class="headerlink" title="老年代"></a>老年代</h3><p>老年代的对象比较稳定，所以MajorGC不会频繁执行。</p>
-<h4 id="触发MinorGC的条件："><a href="#触发MinorGC的条件：" class="headerlink" title="触发MinorGC的条件："></a>触发MinorGC的条件：</h4><p>1 在进行MajorGC之前，一般都先进行了一次MinorGC，使得有新生代的对象进入老年代，<strong>当老年代空间不足时就会触发MajorGC。</strong><br>2 当<strong>无法找到足够大的连续空间</strong>分配给新创建的较大对象时，也会触发MajorGC进行垃圾回收腾出空间。</p>
-<p>MajorGC采用<strong>标记—清除</strong>算法(或者标记—整理算法)<br>MajorGC的耗时比较长，因为<strong>要先整体扫描再回收</strong>，<strong>MajorGC会产生内存碎片</strong>。为了减少内存损耗，一般需要<strong>合并或者标记出来方便下次直接分配</strong>。</p>
-<p>当<strong>老年代也满了装不下</strong>的时候，就会抛出<strong>OOM</strong>。</p>
-<h3 id="永久代-元数据区"><a href="#永久代-元数据区" class="headerlink" title="永久代(元数据区)"></a>永久代(元数据区)</h3><p>指内存的永久保存区域，主要存放Class和Meta（元数据）的信息。<br><strong>Class在被加载的时候元数据信息会放入永久区域</strong>，但是GC不会在主程序运行的时候清除永久代的信息。所以这也导致永久代的信息会随着类加载的增多而膨胀，<strong>最终导致OOM</strong>。<br>注意: 在Java8中，永久代已经被移除，被一个称为“元数据区”（元空间）的区域所取代。</p>
-<p>元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：<br>1.元空间并<strong>不在虚拟机中</strong>，而是使用<strong>本地内存</strong>。因此默认情况下元空间的大小仅仅受<strong>本地内存的大小限制</strong>。类的元数据放入 native memory, 字符串池和类的静态变量放入java堆中。 这样可以加载多少类的元数据就<strong>不再由MaxPermSize</strong>控制, 而由系统的<strong>实际可用空间</strong>来控制。</p>
-<h3 id="MajorGC和FullGC的区别"><a href="#MajorGC和FullGC的区别" class="headerlink" title="MajorGC和FullGC的区别"></a>MajorGC和FullGC的区别</h3><p>(这里参考1建议不要纠结这两个概念的区别，而是应该专注于解决问题)</p>
-<h4 id="Full-GC"><a href="#Full-GC" class="headerlink" title="Full GC"></a>Full GC</h4><p>是清理整个堆空间—包括年轻代和老年代。</p>
-<h4 id="Major-GC"><a href="#Major-GC" class="headerlink" title="Major GC"></a>Major GC</h4><p>是清理老年代。</p>
-<h4 id="MinorGC-触发机制"><a href="#MinorGC-触发机制" class="headerlink" title="MinorGC 触发机制"></a>MinorGC 触发机制</h4><p>1 Eden区满的时候，JVM会触发MinorGC。</p>
-<h4 id="MajorGC-触发机制"><a href="#MajorGC-触发机制" class="headerlink" title="MajorGC 触发机制"></a>MajorGC 触发机制</h4><p>1 在进行MajorGC之前，一般都先进行了一次MinorGC，使得有新生代的对象进入老年代，当老年代空间不足时就会触发MajorGC。<br>2 当无法找到足够大的连续空间分配给新创建的<strong>较大对象时</strong>(如大数组)，也会触发MajorGC进行垃圾回收腾出空间。</p>
-<h4 id="Full-GC触发机制："><a href="#Full-GC触发机制：" class="headerlink" title="Full GC触发机制："></a>Full GC触发机制：</h4><p>1 调用System.gc时，系统建议执行Full GC，但是不必然执行<br>2 <strong>老年代空间</strong>不足<br>3 <strong>方法区空间</strong>不足<br>4 通过<strong>Minor GC</strong>后进入老年代的<strong>平均大小大</strong>于老年代的可用内存<br>5 由Eden区、survivor space1（From Space）区向survivor space2（To Space）区复制时，<br>4 当<strong>永久代满时也会引发Full GC</strong>，会导致<strong>Class、Method元信息的卸载</strong>。</p>
-<p>虚拟机给每个对象定义了一个对象年龄（Age）计数器。如果对象在 Eden 出生并经过第一次 Minor GC 后仍然存活，并且能被 Survivor 容纳的话，将被移动到 Survivor 空间中，并将对象年龄设为 1。对象在 Survivor 区中每熬过一次 Minor GC，年龄就增加 1 岁，　　当它的年龄增加到一定程度（默认为 15 岁）时，就会被晋升到老年代中。对象晋升老年代的年龄阈值，可以通过参数 -XX:MaxTenuringThreshold (阈值)来设置。</p>
-<p>参考：<br>1 原文: Minor GC vs Major GC vs Full GC<br>2 Java中的新生代、老年代、永久代和各种GC</p>
-<p>作者：Aaron_Swartz<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d3a0b4e36c28">https://www.jianshu.com/p/d3a0b4e36c28</a><br>来源：简书</p>
-<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1>
+        <h2 id="Anki-插件推荐"><a href="#Anki-插件推荐" class="headerlink" title="Anki 插件推荐"></a>Anki 插件推荐</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Anki 插件名称</th>
+<th>插件介绍</th>
+<th>插件ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AnkiConnect</td>
+<td>实现 Anki 与外界通信</td>
+<td>2055492159</td>
+</tr>
+<tr>
+<td>Enhance main window</td>
+<td>增强主页</td>
+<td>877182321</td>
+</tr>
+<tr>
+<td>Review Heatmap</td>
+<td>复习热力图，记录学习日历</td>
+<td>1771074083</td>
+</tr>
+<tr>
+<td>Evernote Importer</td>
+<td>支持印象笔记</td>
+<td>831016260</td>
+</tr>
+<tr>
+<td>Markdown and KaTeX Support</td>
+<td>支持 MarkDown 和数学公式</td>
+<td>1087328706</td>
+</tr>
+<tr>
+<td>Word Query</td>
+<td>(查询大卡片单词词义音标等)</td>
+<td>775418273</td>
+</tr>
+</tbody>
+</table>
+</div>
+
       
     </div>
     <div class="article-footer">
@@ -341,7 +363,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://gitflhub.github.io/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/" title="JVM 虚拟机基础" target="_blank" rel="external">https://gitflhub.github.io/2021/05/26/JVM-%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%9F%BA%E7%A1%80/</a>
+      <a href="https://gitflhub.github.io/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/" title="Anki 常用插件" target="_blank" rel="external">https://gitflhub.github.io/2021/07/06/Anki%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -387,13 +409,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2021/05/26/Java%E5%AE%9E%E7%8E%B0%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" title="Java实现堆排序，快速排序，归并排序"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2021/05/26/Java%E6%B3%A8%E8%A7%A3/" title="Java注解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/07/05/%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E9%9B%86/" title="开源数据集"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
