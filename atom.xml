@@ -6,7 +6,7 @@
   <link href="https://gitflhub.github.io/atom.xml" rel="self"/>
   
   <link href="https://gitflhub.github.io/"/>
-  <updated>2021-07-06T03:06:58.051Z</updated>
+  <updated>2021-09-14T12:25:49.264Z</updated>
   <id>https://gitflhub.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PCA</title>
+    <link href="https://gitflhub.github.io/2021/09/14/PCA/"/>
+    <id>https://gitflhub.github.io/2021/09/14/PCA/</id>
+    <published>2021-09-14T12:22:08.000Z</published>
+    <updated>2021-09-14T12:25:49.264Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compute_pca</span>(<span class="params">X, n_components=<span class="number">2</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Input:</span></span><br><span class="line"><span class="string">        X: of dimension (m,n) where each row corresponds to a word vector</span></span><br><span class="line"><span class="string">        n_components: Number of components you want to keep.</span></span><br><span class="line"><span class="string">    Output:</span></span><br><span class="line"><span class="string">        X_reduced: data transformed in 2 dims/columns + regenerated original data</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment">### START CODE HERE (REPLACE INSTANCES OF &#x27;None&#x27; with your code) ###</span></span><br><span class="line">    <span class="comment"># mean center the data</span></span><br><span class="line">    X_demeaned = X- np.mean(X, axis=<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># calculate the covariance matrix</span></span><br><span class="line">    covariance_matrix = np.cov(X_demeaned, rowvar=<span class="literal">False</span>) <span class="comment"># 计算协方差采用的是去平均值矩阵，还要添加rowvar参数</span></span><br><span class="line">    <span class="comment"># calculate eigenvectors &amp; eigenvalues of the covariance matrix</span></span><br><span class="line">    eigen_vals, eigen_vecs = np.linalg.eigh(covariance_matrix)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># sort eigenvalue in increasing order (get the indices from the sort)</span></span><br><span class="line">    idx_sorted = np.argsort(eigen_vals)</span><br><span class="line">    <span class="comment"># reverse the order so that it&#x27;s from highest to lowest.</span></span><br><span class="line">    idx_sorted_decreasing = np.argsort(-eigen_vals)</span><br><span class="line">    <span class="comment"># sort the eigen values by idx_sorted_decreasing</span></span><br><span class="line">    eigen_vals_sorted = eigen_vals[idx_sorted_decreasing]</span><br><span class="line">    <span class="comment"># sort eigenvectors using the idx_sorted_decreasing indices</span></span><br><span class="line">    eigen_vecs_sorted = eigen_vecs[:,idx_sorted_decreasing] <span class="comment"># 选取特征向量的时候注意要采用matrix[:,排序索引] 不可采用 matrix[排序索引] 因为调整的是列向量的顺序</span></span><br><span class="line">    <span class="comment"># select the first n eigenvectors (n is desired dimension</span></span><br><span class="line">    <span class="comment"># of rescaled data array, or dims_rescaled_data)</span></span><br><span class="line">    eigen_vecs_subset = eigen_vecs_sorted[:,<span class="number">0</span>:n_components]</span><br><span class="line">    <span class="comment"># transform the data by multiplying the transpose of the eigenvectors </span></span><br><span class="line">    <span class="comment"># with the transpose of the de-meaned data</span></span><br><span class="line">    <span class="comment"># Then take the transpose of that product.</span></span><br><span class="line">    X_reduced = np.dot(X_demeaned, eigen_vecs_subset)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">### END CODE HERE ###</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> X_reduced</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;PCA&quot;&gt;&lt;a href=&quot;#PCA&quot; class=&quot;headerlink&quot; title=&quot;PCA&quot;&gt;&lt;/a&gt;PCA&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="categories" scheme="https://gitflhub.github.io/categories/categories/"/>
+    
+    
+    <category term="机器学习" scheme="https://gitflhub.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="PCA" scheme="https://gitflhub.github.io/tags/PCA/"/>
+    
+  </entry>
   
   <entry>
     <title>Anki 常用插件</title>
