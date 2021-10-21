@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.ron.zone/image-20211014193447739.png">
 <meta property="article:published_time" content="2021-10-21T00:20:48.000Z">
-<meta property="article:modified_time" content="2021-10-21T01:29:08.234Z">
+<meta property="article:modified_time" content="2021-10-21T01:35:21.508Z">
 <meta property="article:author" content="Ron">
 <meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
@@ -43,6 +43,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -247,6 +249,15 @@
 
   
   
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">参考链接：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">模型示例:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">位置编码公式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F%E7%90%86%E8%A7%A3"><span class="toc-number">4.</span> <span class="toc-text">公式理解:</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
   <article id="Transformer-Transformer 的 Position Embedding 的理解" class="article article-type-Transformer" itemscope itemtype="http://schema.org/BlogPosting">
@@ -388,6 +399,15 @@ p_i^Tp_j&=(p_{i1},p_{i2},...,p_{id_{model}})^T(p_{j1},p_{j2},...,p_{jd_{model}})
       <a href="/2021/09/14/PCA/" title="PCA"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
     
   </ul>
   
