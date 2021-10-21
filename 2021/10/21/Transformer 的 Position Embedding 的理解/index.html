@@ -17,19 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: 排序 | RON BLOG</title>
-  <meta name="description" content="Cumulate">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RON BLOG">
-<meta property="og:url" content="https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/index.html">
+  <title>Transformer 的 Position Embedding 理解 | RON BLOG</title>
+  <meta name="description" content="参考链接：视频：Bilibili:Transformer的位置编码（Position Encoding）进展梳理_哔哩哔哩_bilibili 笔记：PosEnc 模型示例: 位置编码公式： PE_{(k, 2i)} &#x3D; \sin(k&#x2F;10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} &#x3D; \cos(k&#x2F;10000^{\frac{2i}{d_{model}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transformer 的 Position Embedding 理解">
+<meta property="og:url" content="https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="RON BLOG">
-<meta property="og:description" content="Cumulate">
+<meta property="og:description" content="参考链接：视频：Bilibili:Transformer的位置编码（Position Encoding）进展梳理_哔哩哔哩_bilibili 笔记：PosEnc 模型示例: 位置编码公式： PE_{(k, 2i)} &#x3D; \sin(k&#x2F;10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} &#x3D; \cos(k&#x2F;10000^{\frac{2i}{d_{model}">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.ron.zone/image-20211014193447739.png">
+<meta property="article:published_time" content="2021-10-21T00:20:48.000Z">
+<meta property="article:modified_time" content="2021-10-21T01:29:08.234Z">
 <meta property="article:author" content="Ron">
-<meta property="article:tag" content="Machine learning, image recognition, data structure, algorithm">
+<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.ron.zone/image-20211014193447739.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/index.html">
+  <link rel="canonical" href="https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
   
     <link rel="alternate" href="/atom.xml" title="RON BLOG" type="application/atom+xml">
   
@@ -242,90 +246,211 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: 排序</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/AOP/">AOP</a></li>
-          
-          <li><a href="/tags/Anki/">Anki</a></li>
-          
-          <li><a href="/tags/浏览器插件/">浏览器插件</a></li>
-          
-          <li><a href="/tags/Bean/">Bean</a></li>
-          
-          <li><a href="/tags/JVM/">JVM</a></li>
-          
-          <li><a href="/tags/虚拟机/">虚拟机</a></li>
-          
-          <li><a href="/tags/Spring/">Spring</a></li>
-          
-          <li><a href="/tags/锁/">锁</a></li>
-          
-          <li><a href="/tags/排序/">排序</a></li>
-          
-          <li><a href="/tags/Java-注解/">Java 注解</a></li>
-          
-          <li><a href="/tags/Machine-Learning/">Machine Learning</a></li>
-          
-          <li><a href="/tags/LaTex/">LaTex</a></li>
-          
-          <li><a href="/tags/数学公式/">数学公式</a></li>
-          
-          <li><a href="/tags/Octave/">Octave</a></li>
-          
-          <li><a href="/tags/工具/">工具</a></li>
-          
-          <li><a href="/tags/机器学习/">机器学习</a></li>
-          
-          <li><a href="/tags/PCA/">PCA</a></li>
-          
-          <li><a href="/tags/NLP/">NLP</a></li>
-          
-          <li><a href="/tags/生词/">生词</a></li>
-          
-          <li><a href="/tags/开放数据集/">开放数据集</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="Transformer-Transformer 的 Position Embedding 的理解" class="article article-type-Transformer" itemscope itemtype="http://schema.org/BlogPosting">
     
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2021-05-26T13:01:42.000Z" itemprop="datePublished">2021-05-26</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2021/05/26/Java%E5%AE%9E%E7%8E%B0%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">Java实现堆排序，快速排序，归并排序</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E6%8E%92%E5%BA%8F/" class="label label-default mb">排序</a>
-     
-     
-   </div>
-   
-</article>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Transformer 的 Position Embedding 理解
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/" class="article-date">
+	  <time datetime="2021-10-21T00:20:48.000Z" itemprop="datePublished">2021-10-21</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/NLP/" rel="tag">NLP</a>
+  </span>
 
 
-</div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 419(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p>视频：Bilibili:<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ff4y1a7VL?from=search&amp;seid=16603844718264150058&amp;spm_id_from=333.337.0.0">Transformer的位置编码（Position Encoding）进展梳理_哔哩哔哩_bilibili</a></p>
+<p>笔记：<a href="extension://oikmahiipjniocckomdccmplodldodja/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fml-researcher.github.io%2Ffile%2FPosEnc.pdf">PosEnc</a></p>
+<h3 id="模型示例"><a href="#模型示例" class="headerlink" title="模型示例:"></a>模型示例:</h3><p><img src="https://img.ron.zone/image-20211014193447739.png" alt="image-20211014193447739"></p>
+<h3 id="位置编码公式："><a href="#位置编码公式：" class="headerlink" title="位置编码公式："></a>位置编码公式：</h3><script type="math/tex; mode=display">
+PE_{(k, 2i)} = \sin(k/10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} = \cos(k/10000^{\frac{2i}{d_{model}}})\\k :{元素在序列中位置} \\i:{用于表示列数}\\d_{model}:模型的维数</script><h3 id="公式理解"><a href="#公式理解" class="headerlink" title="公式理解:"></a>公式理解:</h3><p>在Transformer中，输入Encoder或者Decoder中的向量为 Embedding Vector + Position Embedding Vector。</p>
+<p>将 Embedding Vector 和 Position Embedding Vector 分别表示为$e_i$和$p_i$。</p>
+<p>后续的计算过程可以视为</p>
+<script type="math/tex; mode=display">
+\begin{equation}\begin{split} 
+(e_i + p_i)^TW_Q^TW_k(e_j+p_j)&=e_i^TW_Q^TW_ke_j+p_i^TW_Q^TW_ke_j\\
+&+e_i^TW_Q^TW_kp_j+p_i^TW_Q^TW_kp_j
+\end{split}\end{equation}</script><p>$e_i^TW_Q^TW_ke_j$ 是表示词向量之间的运算</p>
+<p>$p_i^TW_Q^TW_ke_j$ 和$e_i^TW_Q^TW_kp_j$分别包含了两个词向量的绝对位置的信息</p>
+<p>$p_i^TW_Q^TW_kp_j$简化看成为$p_i^Tp_j$。现在想要将其转化为和<strong>相对位置</strong>有关的向量，即$i-j$的形式</p>
+<p>又因为</p>
+<script type="math/tex; mode=display">
+\begin{equation}\begin{split}
+p_i^Tp_j&=(p_{i1},p_{i2},...,p_{id_{model}})^T(p_{j1},p_{j2},...,p_{jd_{model}})\\
+&=p_{i1}p_{j1}+p_{i2}p_{j2}+...+p_{id_{model}}p_{jd_{model}}
+\end{split}\end{equation}</script><p>再结合</p>
+<script type="math/tex; mode=display">
+PE_{(k, 2i)} = \sin(k/10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} = \cos(k/10000^{\frac{2i}{d_{model}}})</script><p>可以理解为</p>
+<script type="math/tex; mode=display">
+\begin{equation}\begin{split}
+p_i^Tp_j&=(p_{i1},p_{i2},...,p_{id_{model}})^T(p_{j1},p_{j2},...,p_{jd_{model}})\\
+&=p_{i1}p_{j1}+p_{i2}p_{j2}+...+p_{id_{model}}p_{jd_{model}}\\
+&=\cos(i/10000^{\frac{2*1}{d_{model}}})\cos(j/10000^{\frac{2*1}{d_{model}}}) + \sin(i/10000^{\frac{2*1}{d_{model}}})\sin(j/10000^{\frac{2*1}{d_{model}}})+...\\
+&=cos((i-j)/10000^{\frac{2*1}{d_{model}}}) + cos((i-j)/10000^{\frac{2*2}{d_{model}}}) + ... + cos((i-j)/10000^{\frac{2*d_{model}/2}{d_{model}}})\\
+&=g(i-j)
+\end{split}\end{equation}</script><p>于是最终被表示成了相对位置的形式。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/" title="Transformer 的 Position Embedding 理解" target="_blank" rel="external">https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/GitFLHub" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/Ron.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/GitFLHub" target="_blank"><span class="text-dark">Ron</span><small class="ml-1x">AI enthusiasts</small></a></h3>
+        <div>电子科技大学计算机研究生，主攻方向：深度学习，NLP。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/09/14/PCA/" title="PCA"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter" style="padding-bottom: 0px;">
@@ -387,6 +512,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '72FLPOtKmzUN8VrHcGhcIaEj-gzGzoHsz',
+    appKey: 'PtPb7cDWmwbyXkNC7U7qfzvJ',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 

@@ -6,7 +6,7 @@
   <link href="https://gitflhub.github.io/atom.xml" rel="self"/>
   
   <link href="https://gitflhub.github.io/"/>
-  <updated>2021-09-14T12:25:49.264Z</updated>
+  <updated>2021-10-21T01:29:08.234Z</updated>
   <id>https://gitflhub.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Transformer 的 Position Embedding 理解</title>
+    <link href="https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>https://gitflhub.github.io/2021/10/21/Transformer%20%E7%9A%84%20Position%20Embedding%20%E7%9A%84%E7%90%86%E8%A7%A3/</id>
+    <published>2021-10-21T00:20:48.000Z</published>
+    <updated>2021-10-21T01:29:08.234Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p>视频：Bilibili:<a href="https://www.bilibili.com/video/BV1ff4y1a7VL?from=search&amp;seid=16603844718264150058&amp;spm_id_from=333.337.0.0">Transformer的位置编码（Position Encoding）进展梳理_哔哩哔哩_bilibili</a></p><p>笔记：<a href="extension://oikmahiipjniocckomdccmplodldodja/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fml-researcher.github.io%2Ffile%2FPosEnc.pdf">PosEnc</a></p><h3 id="模型示例"><a href="#模型示例" class="headerlink" title="模型示例:"></a>模型示例:</h3><p><img src="https://img.ron.zone/image-20211014193447739.png" alt="image-20211014193447739"></p><h3 id="位置编码公式："><a href="#位置编码公式：" class="headerlink" title="位置编码公式："></a>位置编码公式：</h3><script type="math/tex; mode=display">PE_{(k, 2i)} = \sin(k/10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} = \cos(k/10000^{\frac{2i}{d_{model}}})\\k :{元素在序列中位置} \\i:{用于表示列数}\\d_{model}:模型的维数</script><h3 id="公式理解"><a href="#公式理解" class="headerlink" title="公式理解:"></a>公式理解:</h3><p>在Transformer中，输入Encoder或者Decoder中的向量为 Embedding Vector + Position Embedding Vector。</p><p>将 Embedding Vector 和 Position Embedding Vector 分别表示为$e_i$和$p_i$。</p><p>后续的计算过程可以视为</p><script type="math/tex; mode=display">\begin{equation}\begin{split} (e_i + p_i)^TW_Q^TW_k(e_j+p_j)&=e_i^TW_Q^TW_ke_j+p_i^TW_Q^TW_ke_j\\&+e_i^TW_Q^TW_kp_j+p_i^TW_Q^TW_kp_j\end{split}\end{equation}</script><p>$e_i^TW_Q^TW_ke_j$ 是表示词向量之间的运算</p><p>$p_i^TW_Q^TW_ke_j$ 和$e_i^TW_Q^TW_kp_j$分别包含了两个词向量的绝对位置的信息</p><p>$p_i^TW_Q^TW_kp_j$简化看成为$p_i^Tp_j$。现在想要将其转化为和<strong>相对位置</strong>有关的向量，即$i-j$的形式</p><p>又因为</p><script type="math/tex; mode=display">\begin{equation}\begin{split}p_i^Tp_j&=(p_{i1},p_{i2},...,p_{id_{model}})^T(p_{j1},p_{j2},...,p_{jd_{model}})\\&=p_{i1}p_{j1}+p_{i2}p_{j2}+...+p_{id_{model}}p_{jd_{model}}\end{split}\end{equation}</script><p>再结合</p><script type="math/tex; mode=display">PE_{(k, 2i)} = \sin(k/10000^{\frac{2i}{d_{model}}})\\PE_{(k, 2i + 1)} = \cos(k/10000^{\frac{2i}{d_{model}}})</script><p>可以理解为</p><script type="math/tex; mode=display">\begin{equation}\begin{split}p_i^Tp_j&=(p_{i1},p_{i2},...,p_{id_{model}})^T(p_{j1},p_{j2},...,p_{jd_{model}})\\&=p_{i1}p_{j1}+p_{i2}p_{j2}+...+p_{id_{model}}p_{jd_{model}}\\&=\cos(i/10000^{\frac{2*1}{d_{model}}})\cos(j/10000^{\frac{2*1}{d_{model}}}) + \sin(i/10000^{\frac{2*1}{d_{model}}})\sin(j/10000^{\frac{2*1}{d_{model}}})+...\\&=cos((i-j)/10000^{\frac{2*1}{d_{model}}}) + cos((i-j)/10000^{\frac{2*2}{d_{model}}}) + ... + cos((i-j)/10000^{\frac{2*d_{model}/2}{d_{model}}})\\&=g(i-j)\end{split}\end{equation}</script><p>于是最终被表示成了相对位置的形式。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;参考链接：&quot;&gt;&lt;a href=&quot;#参考链接：&quot; class=&quot;headerlink&quot; title=&quot;参考链接：&quot;&gt;&lt;/a&gt;参考链接：&lt;/h3&gt;&lt;p&gt;视频：Bilibili:&lt;a href=&quot;https://www.bilibili.com/video/BV1ff4</summary>
+      
+    
+    
+    
+    
+    <category term="NLP" scheme="https://gitflhub.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>PCA</title>
