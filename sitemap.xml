@@ -228,13 +228,6 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2022-02-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gitflhub.github.io/tags/Spring/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>daily</changefreq>
@@ -242,14 +235,21 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E9%94%81/</loc>
+    <loc>https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://gitflhub.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <lastmod>2022-02-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitflhub.github.io/tags/%E9%94%81/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -326,6 +326,13 @@
   </url>
   
   <url>
+    <loc>https://gitflhub.github.io/tags/NLP/</loc>
+    <lastmod>2022-02-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gitflhub.github.io/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>daily</changefreq>
@@ -334,13 +341,6 @@
   
   <url>
     <loc>https://gitflhub.github.io/tags/%E7%94%9F%E8%AF%8D/</loc>
-    <lastmod>2022-02-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gitflhub.github.io/tags/NLP/</loc>
     <lastmod>2022-02-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
