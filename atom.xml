@@ -6,7 +6,7 @@
   <link href="https://gitflhub.github.io/atom.xml" rel="self"/>
   
   <link href="https://gitflhub.github.io/"/>
-  <updated>2022-03-03T05:48:53.609Z</updated>
+  <updated>2022-03-03T05:54:04.659Z</updated>
   <id>https://gitflhub.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>SACN</title>
     <link href="https://gitflhub.github.io/2022/03/03/End-to-End%20Structure-Aware%20Convolutional%20Networks%20for%20Knowledge%20Base%20Completion/"/>
     <id>https://gitflhub.github.io/2022/03/03/End-to-End%20Structure-Aware%20Convolutional%20Networks%20for%20Knowledge%20Base%20Completion/</id>
     <published>2022-03-03T05:01:42.000Z</published>
-    <updated>2022-03-03T05:48:53.609Z</updated>
+    <updated>2022-03-03T05:54:04.659Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SACN"><a href="#SACN" class="headerlink" title="SACN"></a>SACN</h1><h2 id="End-to-End-Structure-Aware-Convolutional-Networks-for-Knowledge-Base-Completion"><a href="#End-to-End-Structure-Aware-Convolutional-Networks-for-Knowledge-Base-Completion" class="headerlink" title="End-to-End Structure-Aware Convolutional Networks for Knowledge Base Completion"></a>End-to-End Structure-Aware Convolutional Networks for Knowledge Base Completion</h2><h2 id="基于端到端结构感知卷积神经网络的知识构建"><a href="#基于端到端结构感知卷积神经网络的知识构建" class="headerlink" title="基于端到端结构感知卷积神经网络的知识构建"></a>基于端到端结构感知卷积神经网络的知识构建</h2><h2 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a>创新点</h2><p>Structure-Aware Convolutional Network (SACN)</p><p>将GCN和ConvE结合</p><h2 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h2><p>加权图卷积网络 Weighted graph convolutional network (<a href="##WGCN">WGCN</a>)</p><p>WGCN 利用了图结构的节点信息和关系信息。图节点的权重可调（<strong>节点值？边值？</strong>），可以适应本地聚合中使用的来自邻居的信息量。</p><p>通过聚合的实体来表示实体（？）</p><h2 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h2><p>Conv-TransE (在之前的论文里，提到)</p><p>通过恢复原始的三元组来表示关系（？）</p><h2 id="Encoder-和-Decoder"><a href="#Encoder-和-Decoder" class="headerlink" title="Encoder 和 Decoder"></a>Encoder 和 Decoder</h2><p>编码器和解码器都通过 减小交叉熵误差 进行联合训练</p><h2 id="WGCN"><a href="#WGCN" class="headerlink" title="WGCN"></a>WGCN</h2><p>GCN的扩展，在聚合时，对不同类型的关系进行不同的加权。</p><p>WGCN将<strong>多关系</strong>KB图视为多个<strong>单关系子图</strong>，其中每个子图都包含特定类型的关系。WGCN确定在组合节点的GCN嵌入时给每个子图赋予不同的权重。</p><h1 id="WGCN-1"><a href="#WGCN-1" class="headerlink" title="WGCN"></a>WGCN</h1><h2 id="WGCN-Graph-Convolutional-Networks-with-Weighted-Structural-Features"><a href="#WGCN-Graph-Convolutional-Networks-with-Weighted-Structural-Features" class="headerlink" title="WGCN: Graph Convolutional Networks with Weighted Structural Features"></a>WGCN: Graph Convolutional Networks with Weighted Structural Features</h2><h2 id="具有加权结构特征的图卷积网络"><a href="#具有加权结构特征的图卷积网络" class="headerlink" title="具有加权结构特征的图卷积网络"></a>具有加权结构特征的图卷积网络</h2><p>通过图的连通性和拓扑性的信息,可以调整学习节点的表示.</p><p>针对已有的模型来考虑解决问题</p><ol><li>采用平均权重的方式</li><li>采用局部区分内外邻居的方式</li><li>没有考虑到局部拓扑的因素</li></ol><p>提出了一种 <strong>加权结构特征的图卷积网络</strong></p><p><strong>思路</strong>：</p><ol><li>WGCN 首先收集结构信息（有向边的方向和度数（出入度）感知的<strong><em>随机游走算法</em>？重启算法？</strong>）</li><li>前置过程的交互信息被作为节点的结构特征，进一步获取节点间的依赖和拓扑信息。</li></ol><p>其他模型：</p><ol><li>聚合节点的图内容和结构</li><li>GAT 采用注意力机制只考虑内容的相似性，没有考虑到拓扑结构的相似性</li><li>将边视为双向边，在获取节点的结构信息的时候，节点的权值与方向无关（会忽略不可逆转的信息，如时间序列想）。</li><li>区分方向结构使用单挑赋权参数的方式。（不能获取节点的密度，或者区分节点的几何重构关系）</li><li>GCN 不能获取到长依赖，<strong><em>GCN不能区分非同构图？</em></strong></li></ol>]]></content>
     
