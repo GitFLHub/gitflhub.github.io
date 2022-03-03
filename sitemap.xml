@@ -228,6 +228,20 @@
   </url>
   
   <url>
+    <loc>https://gitflhub.github.io/tags/SMO/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitflhub.github.io/tags/SVM/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gitflhub.github.io/tags/NLP/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
@@ -243,20 +257,6 @@
   
   <url>
     <loc>https://gitflhub.github.io/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gitflhub.github.io/tags/SMO/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gitflhub.github.io/tags/SVM/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
