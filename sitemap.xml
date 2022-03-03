@@ -107,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/repository/index.html</loc>
+    <loc>https://gitflhub.github.io/links/index.html</loc>
     
     <lastmod>2021-05-25</lastmod>
     
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/links/index.html</loc>
+    <loc>https://gitflhub.github.io/repository/index.html</loc>
     
     <lastmod>2021-05-25</lastmod>
     
@@ -207,20 +207,6 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/SMO/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gitflhub.github.io/tags/SVM/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gitflhub.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
@@ -235,7 +221,14 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E7%94%9F%E8%AF%8D/</loc>
+    <loc>https://gitflhub.github.io/tags/SMO/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitflhub.github.io/tags/SVM/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -243,6 +236,13 @@
   
   <url>
     <loc>https://gitflhub.github.io/tags/NLP/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitflhub.github.io/tags/%E7%94%9F%E8%AF%8D/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
