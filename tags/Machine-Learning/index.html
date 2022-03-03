@@ -255,9 +255,9 @@
           
           <li><a href="/tags/浏览器插件/">浏览器插件</a></li>
           
-          <li><a href="/tags/排序/">排序</a></li>
-          
           <li><a href="/tags/Machine-Learning/">Machine Learning</a></li>
+          
+          <li><a href="/tags/排序/">排序</a></li>
           
           <li><a href="/tags/LaTex/">LaTex</a></li>
           
@@ -267,19 +267,19 @@
           
           <li><a href="/tags/工具/">工具</a></li>
           
+          <li><a href="/tags/机器学习/">机器学习</a></li>
+          
+          <li><a href="/tags/PCA/">PCA</a></li>
+          
           <li><a href="/tags/SMO/">SMO</a></li>
           
           <li><a href="/tags/SVM/">SVM</a></li>
           
           <li><a href="/tags/NLP/">NLP</a></li>
           
-          <li><a href="/tags/开放数据集/">开放数据集</a></li>
-          
           <li><a href="/tags/生词/">生词</a></li>
           
-          <li><a href="/tags/机器学习/">机器学习</a></li>
-          
-          <li><a href="/tags/PCA/">PCA</a></li>
+          <li><a href="/tags/开放数据集/">开放数据集</a></li>
           
         </ul>
       </nav>
@@ -408,5 +408,20 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

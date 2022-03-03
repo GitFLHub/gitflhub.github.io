@@ -172,14 +172,14 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <loc>https://gitflhub.github.io/tags/Machine-Learning/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/Machine-Learning/</loc>
+    <loc>https://gitflhub.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -214,6 +214,20 @@
   </url>
   
   <url>
+    <loc>https://gitflhub.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitflhub.github.io/tags/PCA/</loc>
+    <lastmod>2022-03-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://gitflhub.github.io/tags/SMO/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
@@ -235,13 +249,6 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gitflhub.github.io/tags/%E7%94%9F%E8%AF%8D/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
@@ -249,14 +256,7 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-03-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://gitflhub.github.io/tags/PCA/</loc>
+    <loc>https://gitflhub.github.io/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,14 +272,14 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://gitflhub.github.io/categories/AI/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/categories/AI/</loc>
+    <loc>https://gitflhub.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -293,14 +293,14 @@
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/categories/English/</loc>
+    <loc>https://gitflhub.github.io/categories/categories/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://gitflhub.github.io/categories/categories/</loc>
+    <loc>https://gitflhub.github.io/categories/English/</loc>
     <lastmod>2022-03-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
