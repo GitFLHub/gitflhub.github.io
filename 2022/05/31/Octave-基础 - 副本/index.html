@@ -17,19 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>分类: categories | RON BLOG</title>
-  <meta name="description" content="Cumulate">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RON BLOG">
-<meta property="og:url" content="https://gitflhub.github.io/categories/categories/index.html">
+  <title>Octave-基础 - 副本 | RON BLOG</title>
+  <meta name="description" content="工具1. Octave函数常用操作    函数名称 描述     svd (singular value decomposition) 奇异值分解   pinv 求逆矩阵   inv 伪逆矩阵   ‘ 转置   ^ 指数运算   &#x3D;&#x3D; bool判断   ~&#x3D; 不等于判断   &amp;&amp; 逻辑与   “双竖杠” 或 xor 逻辑或   PS1(“&gt;&gt; “) 定义默认的提示符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Octave-基础 - 副本">
+<meta property="og:url" content="https://gitflhub.github.io/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/index.html">
 <meta property="og:site_name" content="RON BLOG">
-<meta property="og:description" content="Cumulate">
+<meta property="og:description" content="工具1. Octave函数常用操作    函数名称 描述     svd (singular value decomposition) 奇异值分解   pinv 求逆矩阵   inv 伪逆矩阵   ‘ 转置   ^ 指数运算   &#x3D;&#x3D; bool判断   ~&#x3D; 不等于判断   &amp;&amp; 逻辑与   “双竖杠” 或 xor 逻辑或   PS1(“&gt;&gt; “) 定义默认的提示符">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-31T13:01:42.000Z">
+<meta property="article:modified_time" content="2022-03-03T06:31:34.142Z">
 <meta property="article:author" content="Ron">
-<meta property="article:tag" content="Machine learning, image recognition, data structure, algorithm">
+<meta property="article:tag" content="Octave">
+<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://gitflhub.github.io/categories/categories/index.html">
+  <link rel="canonical" href="https://gitflhub.github.io/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/index.html">
   
     <link rel="alternate" href="/atom.xml" title="RON BLOG" type="application/atom+xml">
   
@@ -242,61 +245,332 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-categories article-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">分类: categories</h1>
-      <p class="hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/categories">All</a></li>
-          
-          <li><a href="/categories/AI/">AI</a></li>
-          
-          <li><a href="/categories/资料整理/">资料整理</a></li>
-          
-          <li><a href="/categories/算法/">算法</a></li>
-          
-          <li><a href="/categories/语言/">语言</a></li>
-          
-          <li><a href="/categories/categories/">categories</a></li>
-          
-          <li><a href="/categories/English/">English</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="panel panel-default b-no">
-    <div class="panel-heading" role="tab">
-        <h4 class="panel-title">
-            <a data-toggle="collapse" href="#collapsecategories" aria-expanded="true">
-              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
-              categories
-            </a>
-            <small class="text-muted">(Total 1 articles)</small>
-        </h4>
-    </div>
-    <div id="collapsecategories" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingcategories">
-        <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2021/09/14/PCA/" class="collection-item" target="_blank" itemprop="url">
-  <time datetime="2021-09-14T12:22:08.000Z" itemprop="datePublished">2021-09-14</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> PCA
-</a>
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-number">1.</span> <span class="toc-text">工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Octave"><span class="toc-number">1.1.</span> <span class="toc-text">1. Octave</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">文件操作</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Octave-基础 - 副本" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Octave-基础 - 副本
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/" class="article-date">
+	  <time datetime="2022-05-31T13:01:42.000Z" itemprop="datePublished">2022-05-31</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/AI/">AI</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Octave/" rel="tag">Octave</a>, <a class="article-tag-link-link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
+  </span>
 
 
-              
-            </div>
-        </div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 365(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="1-Octave"><a href="#1-Octave" class="headerlink" title="1. Octave"></a>1. Octave</h3><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svd</td>
+<td>(singular value decomposition) 奇异值分解</td>
+</tr>
+<tr>
+<td>pinv</td>
+<td>求逆矩阵</td>
+</tr>
+<tr>
+<td>inv</td>
+<td>伪逆矩阵</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>转置</td>
+</tr>
+<tr>
+<td>^</td>
+<td>指数运算</td>
+</tr>
+<tr>
+<td>==</td>
+<td>bool判断</td>
+</tr>
+<tr>
+<td>~=</td>
+<td>不等于判断</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>“双竖杠” 或 xor</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>PS1(“&gt;&gt; “)</td>
+<td>定义默认的提示符</td>
+</tr>
+<tr>
+<td>=</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>pi</td>
+<td>圆周率</td>
+</tr>
+<tr>
+<td>disp</td>
+<td>打印字符串</td>
+</tr>
+<tr>
+<td>sprintf</td>
+<td>拼接字符串</td>
+</tr>
+<tr>
+<td>format long</td>
+<td>默认long型字符串</td>
+</tr>
+<tr>
+<td>format short</td>
+<td>默认short型字符串</td>
+</tr>
+<tr>
+<td>A = [1 2; 3 4; 5 6]</td>
+<td>定义矩阵</td>
+</tr>
+<tr>
+<td>v = 1:0.1:2</td>
+<td>从1到2，生成步长为0.1的数组</td>
+</tr>
+<tr>
+<td>ones(2,3)</td>
+<td>生成两行三列的1矩阵</td>
+</tr>
+<tr>
+<td>zeros(1, 3)</td>
+<td>生成一行三列的零矩阵</td>
+</tr>
+<tr>
+<td>rand(1,3)</td>
+<td>随机生成一行三列的行矩阵</td>
+</tr>
+<tr>
+<td>randn(1,3)</td>
+<td>生成三个符合方差，标准差为1的正态分布的随机数</td>
+</tr>
+<tr>
+<td>hist(数组，默认5柱)</td>
+<td>生成样本直方图</td>
+</tr>
+<tr>
+<td>hist(数组,  50)</td>
+<td>生成50柱直方图</td>
+</tr>
+<tr>
+<td>eye(4)</td>
+<td>四阶单位矩阵</td>
+</tr>
+<tr>
+<td>help eye</td>
+<td>查看eye指令的用法</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>size(A)</td>
+<td>查看矩阵的大小，1x2的矩阵</td>
+</tr>
+<tr>
+<td>size(A，n)</td>
+<td>返回矩阵的第n个纬度大小</td>
+</tr>
+<tr>
+<td>length(v)</td>
+<td>最大维度的大小</td>
+</tr>
+</tbody>
+</table>
 </div>
+<h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pwd</td>
+<td>Octave当前路径</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>改变路径</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>列出当前路径文件</td>
+</tr>
+<tr>
+<td>load feature.dat 或 load（‘feature.dat’）</td>
+<td>加载文件</td>
+</tr>
+<tr>
+<td>who</td>
+<td>查看当前变量</td>
+</tr>
+<tr>
+<td>whos</td>
+<td>查看当前变量详情，大小，类别</td>
+</tr>
+<tr>
+<td>clear featurex</td>
+<td>删除 featurex</td>
+</tr>
+<tr>
+<td>save hello.mat v;</td>
+<td>将v写入hello.mat文件中</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://gitflhub.github.io/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/" title="Octave-基础 - 副本" target="_blank" rel="external">https://gitflhub.github.io/2022/05/31/Octave-%E5%9F%BA%E7%A1%80%20-%20%E5%89%AF%E6%9C%AC/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/GitFLHub" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/Ron.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/GitFLHub" target="_blank"><span class="text-dark">Ron</span><small class="ml-1x">AI enthusiasts</small></a></h3>
+        <div>电子科技大学计算机研究生，主攻方向：深度学习，NLP。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
     </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/03/03/End-to-End%20Structure-Aware%20Convolutional%20Networks%20for%20Knowledge%20Base%20Completion/" title="SACN"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">
+        <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter" style="padding-bottom: 0px;">
@@ -358,6 +632,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '72FLPOtKmzUN8VrHcGhcIaEj-gzGzoHsz',
+    appKey: 'PtPb7cDWmwbyXkNC7U7qfzvJ',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
